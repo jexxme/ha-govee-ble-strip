@@ -1,0 +1,18 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "description": "Choose the strip to add.",
+        "data": { "address": "Strip" }
+      },
+      "bluetooth_confirm": {
+        "description": "Add {name}?"
+      }
+    },
+    "abort": {
+      "already_configured": "This strip is already set up.",
+      "no_devices_found": "No Govee H6159 strip in Bluetooth range."
+    }
+  }
+}

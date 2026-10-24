@@ -1,0 +1,18 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "description": "Wähle den Streifen, der hinzugefügt werden soll.",
+        "data": { "address": "Streifen" }
+      },
+      "bluetooth_confirm": {
+        "description": "{name} hinzufügen?"
+      }
+    },
+    "abort": {
+      "already_configured": "Dieser Streifen ist bereits eingerichtet.",
+      "no_devices_found": "Kein Govee-H6159-Streifen in Bluetooth-Reichweite."
+    }
+  }
+}

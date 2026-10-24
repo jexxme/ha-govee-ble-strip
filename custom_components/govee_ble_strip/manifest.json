@@ -1,0 +1,23 @@
+{
+  "domain": "govee_ble_strip",
+  "name": "Govee BLE Strip",
+  "bluetooth": [
+    {
+      "local_name": "ihoment_H6159*",
+      "connectable": true
+    }
+  ],
+  "codeowners": [
+    "@jexxme"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "bluetooth_adapters"
+  ],
+  "documentation": "https://github.com/jexxme/ha-govee-ble-strip",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/jexxme/ha-govee-ble-strip/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
