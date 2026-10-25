@@ -14,10 +14,11 @@ PLATFORMS = [Platform.LIGHT]
 async def async_setup_entry(hass: HomeAssistant, entry: GoveeStripConfigEntry) -> bool:
     device = GoveeStrip(hass, entry.data[CONF_ADDRESS], entry.title)
     coordinator = GoveeStripCoordinator(hass, entry, device)
-    # The strip may be busy with the Govee app; start anyway and let polling catch up.
-    await coordinator.async_refresh()
     entry.runtime_data = coordinator
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
+    # Connecting can take a while, or fail while the Govee app holds the strip,
+    # so read the first state in the background instead of blocking setup.
+    entry.async_create_background_task(hass, coordinator.async_refresh(), f"{entry.title} first refresh")
     return True
 
 
